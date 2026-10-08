@@ -1,0 +1,59 @@
+================ Linear Voltage Diagnostic ================
+dataset: D:\pythonproject\ST-GCN\data\ieee33_static_vvo_24h_dataset.pt
+features: x6
+train/val/test: 8400/1800/1800
+best_val_mae: 0.00139634
+test_mae: 0.00137741
+test_rmse: 0.00192990
+test_maxerr: 0.01939148
+
+Correlation:
+MAE vs max loading: 0.191116
+MAE vs vmin: -0.211055
+MAE vs max voltage deviation: 0.286031
+
+MAE by max branch loading:
+  [0.0000,50.0000)  count=   0  ratio=  0.00%  MAE=nan
+ [50.0000,80.0000)  count= 428  ratio= 23.78%  MAE=0.00132507
+[80.0000,100.0000)  count= 501  ratio= 27.83%  MAE=0.00124697
+[100.0000,130.0000)  count= 437  ratio= 24.28%  MAE=0.00130830
+[130.0000,180.0000]  count= 434  ratio= 24.11%  MAE=0.00164917
+
+MAE by minimum voltage:
+   [0.9000,0.9400)  count= 457  ratio= 25.39%  MAE=0.00171535
+   [0.9400,0.9700)  count= 730  ratio= 40.56%  MAE=0.00122462
+   [0.9700,1.0000)  count= 372  ratio= 20.67%  MAE=0.00130326
+   [1.0000,1.0300)  count= 241  ratio= 13.39%  MAE=0.00131381
+   [1.0300,1.0600)  count=   0  ratio=  0.00%  MAE=nan
+   [1.0600,1.1000]  count=   0  ratio=  0.00%  MAE=nan
+
+Final dataset hour distribution:
+hour=00  count=   0  ratio=  0.00%
+hour=01  count=   0  ratio=  0.00%
+hour=02  count= 540  ratio=  4.50%
+hour=03  count=   0  ratio=  0.00%
+hour=04  count=   0  ratio=  0.00%
+hour=05  count=   0  ratio=  0.00%
+hour=06  count=   0  ratio=  0.00%
+hour=07  count=   0  ratio=  0.00%
+hour=08  count=   0  ratio=  0.00%
+hour=09  count= 344  ratio=  2.87%
+hour=10  count=1253  ratio= 10.44%
+hour=11  count=2485  ratio= 20.71%
+hour=12  count=2443  ratio= 20.36%
+hour=13  count=2209  ratio= 18.41%
+hour=14  count= 778  ratio=  6.48%
+hour=15  count= 579  ratio=  4.83%
+hour=16  count= 532  ratio=  4.43%
+hour=17  count= 346  ratio=  2.88%
+hour=18  count=   0  ratio=  0.00%
+hour=19  count=   0  ratio=  0.00%
+hour=20  count= 491  ratio=  4.09%
+hour=21  count=   0  ratio=  0.00%
+hour=22  count=   0  ratio=  0.00%
+hour=23  count=   0  ratio=  0.00%
+
+Interpretation guide:
+1) If linear-model MAE rises strongly with max branch loading or voltage deviation, the AC nonlinearity exists but the dataset may be dominated by mild operating points.
+2) If MAE remains nearly constant and very small across all loading/voltage bins, the sampled fixed-topology operating domain itself is highly close to linear.
+3) If high-load hours have much lower final-sample ratios than other hours, the generation guard/current filter is biasing the nominal 24h sampling distribution.

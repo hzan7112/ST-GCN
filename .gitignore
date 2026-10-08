@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# PyTorch datasets / checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Training outputs
+runs/
+logs/
+results/
+
+# Cache
+.ipynb_checkpoints/
